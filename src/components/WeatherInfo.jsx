@@ -2,6 +2,10 @@ import React from 'react';
 import { UilTemperatureHalf } from '@iconscout/react-unicons'
 import { UilCircle } from '@iconscout/react-unicons'
 import { UilWind } from '@iconscout/react-unicons'
+import { UilSun } from '@iconscout/react-unicons'
+import { UilSunset } from '@iconscout/react-unicons'
+import { UilArrowUp } from '@iconscout/react-unicons'
+import { UilArrowDown } from '@iconscout/react-unicons'
 
 const WeatherInfo = () => {
     return (
@@ -36,6 +40,33 @@ const WeatherInfo = () => {
              </div>
             </div>
             </div>
+
+            <div className='flex flex-row text-white text-sm items-center
+            justify-center space-x-2 py-3'>
+                <div className='flex flex-row space-x-1'>
+                    <UilSun size="20"/>
+                    <p>Rise: <span className='text-sm'>6:30 AM</span></p>
+                </div>
+                <p>|</p>
+                <div className='flex flex-row space-x-1'>
+                    <UilSunset size="20"/>
+                    <p>Set: <span className='text-sm'>6:30 PM</span></p>
+                </div>
+                <div className='flex flex-row space-x-1'>
+                    <UilArrowUp size="20"/>
+                    <p>High: <span className='text-sm'>36°</span></p>
+                </div>
+                <p>|</p>
+                <div className='flex flex-row space-x-1'>
+                    <UilArrowDown size="20"/>
+                    <p>Low: <span className='text-sm'>29°</span></p>
+                </div>
+
+            </div>
+
+     
+
+
         </div>
     );
 };
