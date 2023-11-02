@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import UilReact from '@iconscout/react-unicons/icons/uil-react'
 
 import CityButtons from './components/CityButtons';
@@ -7,8 +7,8 @@ import TimePanel from './components/TimePanel';
 import WeatherInfo from './components/WeatherInfo';
 import Forecast from './components/Forecast';
 
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return ( 
 
@@ -18,10 +18,9 @@ function App() {
      <InputFields/>
      <TimePanel/>
      <WeatherInfo/>
-     <Forecast title="Hourly forecast"/>
-     <Forecast title="Daily forecast"/>
+     <Forecast title="hourly forecast"/>
+     <Forecast title="daily forecast"/>
     </div>
-
   )
 }
 
