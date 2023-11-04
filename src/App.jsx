@@ -6,22 +6,47 @@ import InputFields from './components/inputFields';
 import TimePanel from './components/TimePanel';
 import WeatherInfo from './components/WeatherInfo';
 import Forecast from './components/Forecast';
-
+import getFormattedWeatherData from './services/weatherService';
 
 function App() {
 
-  return ( 
+  const [query,setQuery]=useState({q:'new york'});
+  const [units,setUnits]= useState('metric');
+  const [weather,setWeather]= useState(null);
 
-    <div className="mx-auto rounded-md  max-w-screen-md mt-4 py-5 px-32 
-    backdrop-blur-lg bg-white/20">
-     <CityButtons/>
-     <InputFields/>
-     <TimePanel/>
-     <WeatherInfo/>
-     <Forecast title="hourly forecast"/>
-     <Forecast title="daily forecast"/>
+
+  useEffect(()=>
+  {
+    const fetchWeather = async () =>
+  {
+    //destructing dhaka
+   await getFormattedWeatherData({...query,units})
+   .then(data=>
+    {
+      setWeather(data);
+    });
+  };
+    fetchWeather();
+  },[query,units]);
+
+  return (
+    <div className="mx-auto rounded-md max-w-screen-md mt-4 py-5 px-32 backdrop-blur-lg bg-white/20">
+      <CityButtons/>
+      <InputFields />
+  
+      {weather ? ( // Check if weather data is available
+        <div className="div">
+          <TimePanel weather={weather}/>
+          <WeatherInfo weather={weather} />
+          <Forecast title="hourly forecast" weather={weather} />
+          <Forecast title="daily forecast" weather={weather} />
+        </div>
+      ) : (
+        <div className='text-white font-medium animate-pulse mt-4'>Loading...</div> // Display a loading indicator
+      )}
     </div>
-  )
+  );
+  
 }
 
 export default App

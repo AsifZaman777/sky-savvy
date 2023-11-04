@@ -1,22 +1,23 @@
 import React from 'react';
 
-const TimePanel = () => {
-    return (
-        <div>
-            <div className='flex flex-row items-center justify-center text-white font-light my-6'>
-                   Thursday, 2 November 2023 (Local Time 12:20 PM) 
-            </div>
+const TimePanel = ({ weather }) => {
+  const { dt } = weather;
 
-            <div className='flex items-center justify-center my-3'>
-                <p className='text-white text-3xl font-medium'>  
-                    Dhaka   
-                </p>
+  const date = new Date(dt * 1000);  
 
-                 
+  return (
+    <div>
+      <div className='flex flex-row items-center justify-center text-white font-light my-6 animate-bounce ml-10'>
+        {"Current Date: "+date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear()+" ("+date.getHours()+":"+date.getMinutes()+" AM)"}
+      </div>
 
-            </div>
-        </div>
-    );
+      <div className='flex items-center justify-center my-3'>
+        <p className='text-white text-3xl font-medium'>
+          Dhaka
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default TimePanel;
