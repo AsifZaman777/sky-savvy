@@ -23,27 +23,27 @@ const Forecast = ({title,weather}) => {
                     src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
                     alt="" 
                     className='w-12 my-1' />
-                    <p className='font-medium'>{Math.round(temp)}</p>
+                    <p className='font-medium'>{Math.round(temp)+"°"}</p>
             </div>
             <div className='flex flex-col items-center justify-center py-2 mt-2'>
                     <p className='text-white text-md'>3:00 PM</p>
                     <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
                      alt="" className='w-12 my-1' />
-                    <p className='font-medium'>{Math.round(temp)}</p>
+                    <p className='font-medium'>{Math.round(temp)+"°"}</p>
             </div>
             <div className='flex flex-col items-center justify-center py-2 mt-2'>
                     <p className='text-white text-md'>4:00 PM</p>
                     <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
                      alt=""
                     className='w-12 my-1' />
-                    <p className='font-medium'>{Math.round(temp)}</p>
+                    <p className='font-medium'>{Math.round(temp)+"°"}</p>
             </div>
             <div className='flex flex-col items-center justify-center py-2 mt-2'>
                     <p className='text-white text-md'>5:00 PM</p>
                     <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} 
                     alt="" 
                     className='w-12 my-1' />
-                    <p className='font-medium'>{Math.round(temp)}</p>
+                    <p className='font-medium'>{Math.round(temp)+"°"}</p>
             </div>
 
             <div className='flex flex-col items-center justify-center py-2 mt-2'>
@@ -51,7 +51,7 @@ const Forecast = ({title,weather}) => {
                     <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} 
                     alt="" 
                     className='w-12 my-1' />
-                    <p className='font-medium'>{Math.round(temp)}</p>
+                    <p className='font-medium'>{Math.round(temp)+"°"}</p>
             </div>
             
             </div>

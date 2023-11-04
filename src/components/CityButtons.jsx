@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const CityButtons = () => {
+const CityButtons = ({setQuery}) => {
     const cities = [
         {
             id: 1,
@@ -9,7 +9,7 @@ const CityButtons = () => {
         },
         {
             id: 2,
-            title: 'Chattagram'
+            title: 'Chittagong'
         },
         {
             id: 3,
@@ -17,7 +17,7 @@ const CityButtons = () => {
         },
         {
             id: 4,
-            title: 'Barishal'
+            title: 'Borishal'
         },
         {
             id: 5, // Change the duplicate id to 5
@@ -29,7 +29,7 @@ const CityButtons = () => {
         <div className='flex items-center justify-around my-6'>
         {
             cities.map((city) => (
-                <button key={city.id} className='text-white text-lg font-sans px-8 py-3 hover:backdrop-blur-md'>
+                <button onClick={()=>setQuery({q:city.title})} key={city.id} className='text-white text-lg font-sans px-8 py-3 hover:backdrop-blur-md'>
                     {city.title}
                 </button>
             ))

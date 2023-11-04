@@ -8,6 +8,7 @@ import { UilArrowUp } from "@iconscout/react-unicons";
 import { UilArrowDown } from "@iconscout/react-unicons";
 import { DateTime } from "luxon";
 
+
 const WeatherInfo = ({ weather }) => {
   const {
     lat,
@@ -29,14 +30,7 @@ const WeatherInfo = ({ weather }) => {
   const formattedSunset = DateTime.fromSeconds(sunset).toFormat("h:mm");
 
   return (
-    <div>
-
-           <div
-        className="flex items-center justify-center py-6
-            text-md text-cyan-300"
-      >
-        ({country})
-      </div>  
+    <div className="fade-in">
       <div
         className="flex items-center justify-center py-6
             text-xl text-cyan-300"
@@ -95,7 +89,7 @@ const WeatherInfo = ({ weather }) => {
         <div className="flex flex-row space-x-1">
           <UilSun size="20" />
           <p>
-            Rise: <span className="text-sm">{formattedSunrise} AM</span>
+            Rise: <span className="text-sm ">{formattedSunrise} AM</span>
           </p>
         </div>
         <p>|</p>

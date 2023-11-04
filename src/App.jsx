@@ -10,7 +10,7 @@ import getFormattedWeatherData from './services/weatherService';
 
 function App() {
 
-  const [query,setQuery]=useState({q:'new york'});
+  const [query,setQuery]=useState({q:'dhaka'});
   const [units,setUnits]= useState('metric');
   const [weather,setWeather]= useState(null);
 
@@ -24,6 +24,7 @@ function App() {
    .then(data=>
     {
       setWeather(data);
+      // console.log(data);
     });
   };
     fetchWeather();
@@ -31,12 +32,13 @@ function App() {
 
   return (
     <div className="mx-auto rounded-md max-w-screen-md mt-4 py-5 px-32 backdrop-blur-lg bg-white/20">
-      <CityButtons/>
-      <InputFields />
+      <CityButtons setQuery={setQuery}/>
+      <InputFields  setQuery={setQuery} units={units}
+      setUnits={setUnits}/>
   
       {weather ? ( // Check if weather data is available
         <div className="div">
-          <TimePanel weather={weather}/>
+          <TimePanel weather={weather} query={query}/>
           <WeatherInfo weather={weather} />
           <Forecast title="hourly forecast" weather={weather} />
           <Forecast title="daily forecast" weather={weather} />
