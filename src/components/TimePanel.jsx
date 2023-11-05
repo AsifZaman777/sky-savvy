@@ -9,7 +9,7 @@ const TimePanel = ({ weather}) => {
   return (
     <div>
       <div className='flex flex-row items-center justify-center text-white font-light my-6 animate-bounce ml-'>
-        {"Current Date: "+date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear()+" ("+date.getHours()+":"+date.getMinutes()+" AM)"}
+        {"Current Date: "+date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()+" ("+date.getHours()+":"+date.getMinutes()+" AM)"}
       </div>
 
       <div className='flex items-center justify-center my-3'>

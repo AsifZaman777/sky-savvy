@@ -27,7 +27,7 @@ const InputFields = ({setQuery}) => {
                  <button className='text-gray-600 hover:text-gray-800 pr-2 animate-pulse'
                 onClick={handleSearchItem}>
                     <UilSearch size="18" 
-                    />
+                />
                 </button>
             </div>
             
